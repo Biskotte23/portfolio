@@ -1,0 +1,119 @@
+@use "../../../../../assets/styles/mixins" as mixins;
+
+.about {
+  width: 100%;
+
+  .body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    @include mixins.sm-lt {
+      flex-direction: column;
+    }
+
+    .infos {
+      margin-left: 4rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      @include mixins.sm {
+        width: 100%;
+        margin: 2rem 0 0 0;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @include mixins.xs {
+        margin: 2rem 0;
+      }
+
+      .infoCard {
+        background-color: transparent;
+        margin-bottom: 2rem;
+
+        @include mixins.sm-lt {
+          padding-right: 2rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          @include mixins.sm-lt {
+            padding-right: 0;
+          }
+        }
+
+        .infoTitle {
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        .location {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .franceFlag {
+            --flag-size: 1.5rem;
+            width: var(--flag-size);
+            height: var(--flag-size);
+            margin-right: 0.5rem;
+            display: inline-block;
+            background: url("../../../../../assets/images/france-flag.svg")
+              center center/cover;
+            border-radius: 100%;
+          }
+
+          p {
+            color: var(--color-black);
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+        }
+
+        a {
+          &.link {
+            font-size: 1.4rem;
+            font-weight: 600;
+            white-space: nowrap;
+            border-bottom-width: 2px;
+
+            i {
+              margin-left: 0.5rem;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        .socialNetworks {
+          ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+            li {
+              margin-right: 1.5rem;
+
+              a {
+                color: var(--color-black);
+                font-size: 2.4rem;
+                border-bottom: none;
+                transition: color 0.3s;
+
+                &:hover {
+                  color: var(--primary);
+                  transition: color 0.4s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
