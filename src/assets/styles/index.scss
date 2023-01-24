@@ -1,5 +1,14 @@
-@use "./variables";
-@use "./base";
-@use "./utils";
-@use "./mixins";
-@use "./debug";
+// Configuration and helpers.
+@import "./utils/variables", "./utils/mixins", "./utils/functions";
+
+// Base stuff.
+@import "./base/base";
+
+// Layout-related sections.
+@import "./layouts/debug", "./layouts/header";
+
+// Components.
+@import "./components/divider", "./components/links", "./components/cards";
+
+// Page-specific styles.
+@import "./pages/portfolio";

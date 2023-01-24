@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains several cards.
+// -----------------------------------------------------------------------------
+
+/**
+ * Card to show a skill title and its logo.
+ */
+.skill-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.7rem 0.8rem;
+  background-color: color-white;
+  border-radius: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: text-color;
+  letter-spacing: 1px;
+
+  img {
+    $iconSize: 2.5rem;
+    width: $iconSize;
+    height: $iconSize;
+    margin-right: 1rem;
+    object-fit: contain;
+  }
+}
+
+/**
+ * Card to show an info with a title.
+ */
+.info-card {
+  background-color: transparent;
+  margin-bottom: 2rem;
+
+  @include sm-lt {
+    padding-right: 2rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: color-black;
+    font-weight: 600;
+
+    p {
+      color: color-black;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,18 +1,14 @@
-import styles from "./Presentation.module.scss";
-
 export default function Presentation() {
   return (
-    <div className={styles.presentation}>
-      <div className={styles.profileContainer}>
-        <div className={styles.profile}></div>
+    <div className="presentation">
+      <div className="profile-picture">
+        <div className="profile-picture__image"></div>
       </div>
-      <div className={styles.info}>
+      <div className="presentation__infos">
         <h1>
           Jules <span className="uppercase">Pascot</span>
         </h1>
-        <p className={styles.shortDescription}>
-          Etudiant en informatique basé sur Tours.
-        </p>
+        <p>Etudiant en informatique basé sur Tours.</p>
       </div>
     </div>
   );

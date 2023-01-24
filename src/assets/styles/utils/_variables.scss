@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// --------------------
+// Colors.
+// --------------------
+
+/// White.
+/// @type Color
+$color-white: #ffffff;
+
+/// Snow.
+/// @type Color
+$color-snow: #f5f4f9;
+
+/// Black.
+/// @type Color
+$color-black: #222f3e;
+
+/// Text color..
+/// @type Color
+$text-color: #576574;
+
+/// Divider color.
+/// @type Color
+$divider-color: #bbb;
+
+/// Primary color.
+/// @type Color
+$primary: rgb(255, 10, 60);
+
+// --------------------
+// Box shadows.
+// --------------------
+
+/// Profile box shadow.
+/// @type List
+$box-shadow-profile: 0px 3px 8px rgba(0, 0, 0, 0.24);
+
+/// Divider box shadow.
+/// @type List
+$box-shadow-divider: 0px 0px 1px #7c818d;
+
+// --------------------
+// Fonts.
+// --------------------
+
+/// Regular font family
+/// @type List
+$font-family: "Montserrat", sans-serif;
+
+// --------------------
+// Other.
+// --------------------
+
+/// Breakpoints map.
+/// @prop {String} keys - Keys are identifiers mapped to a given length.
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels.
+$breakpoints: (
+  "xs-max": 576px,
+  "sm-min": 577px,
+  "sm-max": 768px,
+  "md-min": 769px,
+  "md-max": 992px,
+  "lg-min": 993px,
+  "lg-max": 1200px,
+  "xl-min": 1201px,
+);
+
+/// Relative or absolute URL where all assets are served from.
+/// @type String
+$url-assets: "/assets/";
