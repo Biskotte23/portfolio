@@ -3,31 +3,6 @@
 // -----------------------------------------------------------------------------
 
 /**
- * Card to show a skill title and its logo.
- */
-.skill-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0.7rem 0.8rem;
-  background-color: color-white;
-  border-radius: 0.6rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: text-color;
-  letter-spacing: 1px;
-
-  img {
-    $iconSize: 2.5rem;
-    width: $iconSize;
-    height: $iconSize;
-    margin-right: 1rem;
-    object-fit: contain;
-  }
-}
-
-/**
  * Card to show an info with a title.
  */
 .info-card {
@@ -58,6 +33,151 @@
       color: color-black;
       font-weight: 600;
       margin-bottom: 0;
+    }
+  }
+}
+
+/**
+ * Card to show a skill title and its logo.
+ */
+.skill-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-color;
+  background-color: $color-white;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  img {
+    $iconSize: 2.5rem;
+    width: $iconSize;
+    height: $iconSize;
+    margin-right: 1rem;
+    object-fit: contain;
+  }
+}
+
+/**
+ * Card to show a professional experience.
+ */
+.experience-card {
+  $border-color: #ddd;
+  border: 1px solid $border-color;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 16rem;
+    @include background-image;
+
+    @include sm-lt {
+      height: 14rem;
+    }
+
+    &--hover {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      padding: 1rem 2rem;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      color: transparent;
+      background-color: transparent;
+      overflow: hidden;
+      transition: 0.5s;
+
+      p {
+        color: inherit;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-bar {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 1.5rem;
+    background-color: $color-white;
+    border-top: 1px solid $border-color;
+
+    &-heading {
+      flex: 1 1 auto;
+      letter-spacing: 0.5px;
+
+      &__title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $color-black;
+        margin-bottom: 0.2rem;
+
+        @include sm-lt {
+          font-size: 1.7rem;
+          margin-bottom: 0.1rem;
+        }
+      }
+
+      &__function {
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-bottom: 0;
+
+        @include sm-lt {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    &__arrow-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+      margin-right: 1rem;
+
+      i {
+        color: $primary;
+        font-size: 2rem;
+      }
+
+      p {
+        color: $primary;
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:hover {
+    .experience-card__image {
+      &--hover {
+        color: $color-snow;
+        background-color: rgba($color: #000000, $alpha: 0.75);
+        transition: background-color 0.4s, color 1s;
+      }
     }
   }
 }

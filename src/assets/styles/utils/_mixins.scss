@@ -127,3 +127,15 @@
     padding: 0 2rem;
   }
 }
+
+/// Background image.
+/// @param {String} $url - URL of the image.
+@mixin background-image($url: none) {
+  @if ($url != none) {
+    background-image: url($url);
+  }
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

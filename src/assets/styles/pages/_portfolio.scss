@@ -128,30 +128,55 @@
     }
   }
 
+  // Experience.
+  .experience {
+    .experience-list {
+      --numberPerRow: 3;
+      display: grid;
+      grid-template-columns: repeat(var(--numberPerRow), 1fr);
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+
+      $responsive: (
+        xs: (
+          --numberPerRow: 1,
+        ),
+        sm: (
+          --numberPerRow: 2,
+        ),
+        md: (
+          --numberPerRow: 2,
+        ),
+        lg: (
+          --numberPerRow: 3,
+        ),
+      );
+
+      @include media-queries-rules($responsive);
+    }
+  }
+
   // Skills section.
   .skills {
     .skill-list {
-      --skillsPerRow: 1;
+      --numberPerRow: 5;
       display: grid;
-      grid-template-columns: repeat(var(--skillsPerRow), 1fr);
+      grid-template-columns: repeat(var(--numberPerRow), 1fr);
       gap: 1rem 2rem;
       margin-bottom: 2.5rem;
 
       $responsive: (
         xs: (
-          --skillsPerRow: 1,
+          --numberPerRow: 1,
         ),
         sm: (
-          --skillsPerRow: 2,
+          --numberPerRow: 2,
         ),
         md: (
-          --skillsPerRow: 3,
+          --numberPerRow: 3,
         ),
         lg: (
-          --skillsPerRow: 4,
-        ),
-        xl: (
-          --skillsPerRow: 5,
+          --numberPerRow: 4,
         ),
       );
 

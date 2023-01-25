@@ -1,9 +1,4 @@
-import {
-  languages,
-  frontend,
-  backend,
-  tools,
-} from "../../../../../data/skills";
+import { languages, frontend, backend, tools } from "../../../../data/skills";
 
 function getSkills(skills) {
   const skillList = skills.map((skill) => (
