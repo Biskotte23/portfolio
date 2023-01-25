@@ -131,27 +131,31 @@
   // Skills section.
   .skills {
     .skill-list {
-      --skillsPerRow: 5;
+      --skillsPerRow: 1;
       display: grid;
       grid-template-columns: repeat(var(--skillsPerRow), 1fr);
       gap: 1rem 2rem;
       margin-bottom: 2.5rem;
 
-      @include lg {
-        --skillsPerRow: 4;
-      }
+      $responsive: (
+        xs: (
+          --skillsPerRow: 1,
+        ),
+        sm: (
+          --skillsPerRow: 2,
+        ),
+        md: (
+          --skillsPerRow: 3,
+        ),
+        lg: (
+          --skillsPerRow: 4,
+        ),
+        xl: (
+          --skillsPerRow: 5,
+        ),
+      );
 
-      @include md {
-        --skillsPerRow: 3;
-      }
-
-      @include sm {
-        --skillsPerRow: 2;
-      }
-
-      @include xs {
-        --skillsPerRow: 1;
-      }
+      @include media-queries-rules($responsive);
     }
   }
 }

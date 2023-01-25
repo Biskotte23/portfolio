@@ -62,10 +62,61 @@
   }
 }
 
+/// Add media query properties for a specific media.
+/// @param $media - Media.
+@mixin media-queries($media) {
+  @if ($media == xs) {
+    @include xs() {
+      @content;
+    }
+  } @else if ($media == sm) {
+    @include sm() {
+      @content;
+    }
+  } @else if ($media == sm-lt) {
+    @include sm-lt() {
+      @content;
+    }
+  } @else if ($media == md) {
+    @include md() {
+      @content;
+    }
+  } @else if ($media == md-lt) {
+    @include md-lt() {
+      @content;
+    }
+  } @else if ($media == lg) {
+    @include lg() {
+      @content;
+    }
+  } @else if ($media == lg-lt) {
+    @include lg-lt() {
+      @content;
+    }
+  } @else if ($media == xl) {
+    @include xl() {
+      @content;
+    }
+  }
+}
+
+/// Add media query rules from a map.
+/// @param {Map{Map}} $properties - Style rules according to the media.
+@mixin media-queries-rules($properties) {
+  @each $media, $rules in $properties {
+    @include media-queries($media) {
+      @each $rule, $value in $rules {
+        #{$rule}: $value;
+      }
+    }
+  }
+}
+
 // --------------------
 // Other.
 // --------------------
 
+/// Default page style.
 @mixin page {
   width: 100%;
   max-width: 1200px;
