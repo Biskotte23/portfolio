@@ -2,9 +2,20 @@
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
-/**
- * Set the characters of a text to uppercase.
- */
+.color {
+  &-primary {
+    color: var(--color-primary);
+  }
+
+  &-secondary {
+    color: var(--color-secondary);
+  }
+}
+
 .uppercase {
   text-transform: uppercase;
+}
+
+.monospace {
+  font-family: var(--font-monospace);
 }

@@ -1,0 +1,49 @@
+@mixin side-bar {
+  margin: 0 4rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.side-bar {
+  &--social-networks {
+    @include side-bar;
+    left: 0;
+
+    ul {
+      li {
+        margin-bottom: 1.5rem;
+        text-align: center;
+
+        a {
+          padding: 1rem;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &--contact {
+    @include side-bar;
+    right: 0;
+
+    a {
+      padding: 1rem;
+      font-size: 1.2rem;
+      writing-mode: vertical-lr;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__vertical-line {
+    width: 1px;
+    height: 10rem;
+    background-color: var(--color-text);
+    margin-top: 2rem;
+  }
+}

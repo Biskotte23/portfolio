@@ -1,0 +1,41 @@
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  h1 {
+    width: 100%;
+    font-family: var(--font-qebab);
+    font-size: 10rem;
+    margin-bottom: 6rem;
+    letter-spacing: 0.4rem;
+  }
+
+  p {
+    width: 100%;
+    font-family: var(--font-monospace);
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  &__sentence-beginning {
+    color: var(--color-secondary);
+  }
+
+  &__sentence-ending {
+    color: var(--color-light-grey);
+    text-align: right;
+  }
+
+  &__sandwich {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

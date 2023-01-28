@@ -1,57 +1,26 @@
 // -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
+// This file contains all application-wide CSS/Sass variables.
 // -----------------------------------------------------------------------------
 
 // --------------------
-// Colors.
+// CSS variables.
 // --------------------
 
-/// White.
-/// @type Color
-$color-white: #ffffff;
+:root {
+  --color-background: rgb(4, 4, 4);
+  --color-text: #fff;
+  --color-light-grey: #ccc;
+  --color-primary: rgba(255, 20, 70, 1);
+  --color-secondary: #08fdd8;
 
-/// Snow.
-/// @type Color
-$color-snow: #f5f4f9;
-
-/// Black.
-/// @type Color
-$color-black: #222f3e;
-
-/// Text color..
-/// @type Color
-$text-color: #576574;
-
-/// Divider color.
-/// @type Color
-$divider-color: #bbb;
-
-/// Primary color.
-/// @type Color
-$primary: rgb(255, 10, 60);
+  --font-qebab: "Qebab-Shadow", "Open Sans", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+  --font-monospace: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono",
+    monospace;
+}
 
 // --------------------
-// Box shadows.
-// --------------------
-
-/// Profile box shadow.
-/// @type List
-$box-shadow-profile: 0px 3px 8px rgba(0, 0, 0, 0.24);
-
-/// Divider box shadow.
-/// @type List
-$box-shadow-divider: 0px 0px 1px #7c818d;
-
-// --------------------
-// Fonts.
-// --------------------
-
-/// Regular font family
-/// @type List
-$font-family: "Montserrat", sans-serif;
-
-// --------------------
-// Other.
+// Sass variables.
 // --------------------
 
 /// Breakpoints map.

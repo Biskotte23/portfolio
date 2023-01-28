@@ -1,14 +1,16 @@
 // Configuration and helpers.
-@import "./utils/variables", "./utils/mixins", "./utils/functions";
+@import "./utils/variables", "./utils/mixins", "./utils/functions",
+  "./utils/fonts";
 
 // Base stuff.
-@import "./base/base";
-
-// Layout-related sections.
-@import "./layouts/debug", "./layouts/header";
+@import "./base/base", "./base/helpers";
 
 // Components.
-@import "./components/divider", "./components/links", "./components/cards";
+@import "./components/logo", "./components/links", "./components/buttons";
+
+// Layout-related sections.
+@import "./layouts/debug", "./layouts/header", "./layouts/side-bar",
+  "layouts/banner", "./layouts/about";
 
 // Page-specific styles.
 @import "./pages/portfolio";
