@@ -23,8 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Assets
-public/assets/icon/*.ico
-public/assets/icon/*.png
+public/assets/icons/*.ico
+public/assets/icons/*.png
 public/assets/images
 src/assets/images
 src/assets/fonts

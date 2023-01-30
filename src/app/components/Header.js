@@ -52,13 +52,18 @@ function Nav() {
   );
 }
 
-function MenuButton({ onClick }) {
+function MenuButton({ onClick, isActive }) {
   return (
-    <button className="aside-menu-button" onClick={onClick}>
-      <div className="aside-menu-button__bar aside-menu-button__bar--1"></div>
-      <div className="aside-menu-button__bar aside-menu-button__bar--2"></div>
-      <div className="aside-menu-button__bar aside-menu-button__bar--3"></div>
-    </button>
+    <div
+      className={`menu-button ${isActive ? "is-active" : ""}`}
+      onClick={onClick}
+    >
+      <div className="hamburger">
+        <span className="hamburger__line"></span>
+        <span className="hamburger__line"></span>
+        <span className="hamburger__line"></span>
+      </div>
+    </div>
   );
 }
 
@@ -75,20 +80,19 @@ function AsideMenu({ displayed, onClick }) {
 }
 
 export default function Header() {
-  const [isAsideMenuDisplay, setAsideMenuDisplay] = useState(false);
+  const [isAsideMenuDisplayed, setAsideMenuDisplay] = useState(false);
+  let body = document.querySelector("body");
+  let pageContent = document.querySelector(".page__content");
 
   function toggleAsideMenuDisplay() {
-    setAsideMenuDisplay(!isAsideMenuDisplay);
+    setAsideMenuDisplay(!isAsideMenuDisplayed);
   }
 
   function hideAsideMenu() {
     setAsideMenuDisplay(false);
   }
 
-  let body = document.querySelector("body");
-  let pageContent = document.querySelector(".page__content");
-
-  if (isAsideMenuDisplay) {
+  if (isAsideMenuDisplayed) {
     body.classList.add("fixed");
     pageContent.classList.add("blur");
   } else {
@@ -102,8 +106,11 @@ export default function Header() {
     <header className="header">
       <Logo />
       <Nav />
-      <AsideMenu displayed={isAsideMenuDisplay} onClick={hideAsideMenu} />
-      <MenuButton onClick={toggleAsideMenuDisplay} />
+      <AsideMenu displayed={isAsideMenuDisplayed} onClick={hideAsideMenu} />
+      <MenuButton
+        onClick={toggleAsideMenuDisplay}
+        isActive={isAsideMenuDisplayed}
+      />
     </header>
   );
 }
