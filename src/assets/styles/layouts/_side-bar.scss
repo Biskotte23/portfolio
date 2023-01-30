@@ -1,36 +1,42 @@
 @mixin side-bar {
-  margin: 0 4rem;
   position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  top: 0;
   bottom: 0;
   z-index: 1;
+
+  @include sm-lt {
+    display: none;
+  }
 }
 
 .side-bar {
   &--social-networks {
+    left: 4rem;
     @include side-bar;
-    left: 0;
 
-    ul {
+    @include lg-lt {
+      left: 1.5rem;
+    }
+
+    ul.social-networks {
+      flex-direction: column;
+
       li {
-        margin-bottom: 1.5rem;
         text-align: center;
-
-        a {
-          padding: 1rem;
-          font-size: 2.5rem;
-        }
       }
     }
   }
 
   &--contact {
+    right: 4rem;
     @include side-bar;
-    right: 0;
+
+    @include lg-lt {
+      right: 1.5rem;
+    }
 
     a {
       padding: 1rem;

@@ -25,13 +25,6 @@ html {
 body {
   color: var(--color-text);
   background-color: var(--color-background);
-
-  #root {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 ul {
@@ -44,4 +37,10 @@ a {
 
 img {
   width: 100%;
+}
+
+button {
+  border: none;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }

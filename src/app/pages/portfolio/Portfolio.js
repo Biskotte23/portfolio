@@ -3,7 +3,7 @@ import About from "./components/About";
 
 export default function Portfolio() {
   return (
-    <div className="portfolio">
+    <div className="page__content portfolio">
       <Banner />
       <About />
     </div>

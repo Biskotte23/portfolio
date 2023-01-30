@@ -6,19 +6,42 @@
   justify-content: flex-end;
   align-items: center;
 
+  @include mobile {
+    height: 100svh;
+    min-height: 550px;
+  }
+
   h1 {
     width: 100%;
     font-family: var(--font-qebab);
     font-size: 10rem;
     margin-bottom: 6rem;
     letter-spacing: 0.4rem;
+
+    @include md {
+      font-size: 8rem;
+    }
+
+    @include sm-lt {
+      font-size: 6rem;
+    }
   }
 
   p {
     width: 100%;
     font-family: var(--font-monospace);
     font-size: 1.8rem;
+    line-height: 2.6rem;
     margin-bottom: 3rem;
+
+    @include md {
+      font-size: 1.6rem;
+    }
+
+    @include sm-lt {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 
   &__sentence-beginning {
@@ -28,6 +51,11 @@
   &__sentence-ending {
     color: var(--color-light-grey);
     text-align: right;
+    padding-left: 15rem;
+
+    @include sm-lt {
+      padding-left: 5rem;
+    }
   }
 
   &__sandwich {

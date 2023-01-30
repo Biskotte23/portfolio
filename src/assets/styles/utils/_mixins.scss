@@ -6,6 +6,13 @@
 // Media queries.
 // --------------------
 
+/// Media query for mobile devices.
+@mixin mobile {
+  @media only screen {
+    @content;
+  }
+}
+
 /// Media query for XS devices.
 @mixin xs {
   @media (max-width: map-get($breakpoints, "xs-max")) {
@@ -131,7 +138,7 @@
 /// @param {String} $url - URL of the image.
 @mixin background-image($url: none) {
   @if ($url != none) {
-    background-image: url($url);
+    background-image: get-image($url);
   }
 
   background-repeat: no-repeat;

@@ -1,9 +1,5 @@
 @mixin logo($size: 2rem) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-primary);
-  font-family: var(--font-qebab);
-  font-size: $size;
-  line-height: $size;
+  width: $size;
+  height: $size;
+  @include background-image("J.svg");
 }

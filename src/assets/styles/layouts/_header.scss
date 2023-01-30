@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   z-index: 2;
-  padding: 0 4rem;
+  padding: 0 6rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,14 +18,37 @@
   background-color: var(--color-background);
   box-shadow: var(--color-background) 0px 20px 20px 1px;
 
-  .logo-j {
-    @include logo(5rem);
+  @include lg-lt {
+    padding: 0 3rem;
+  }
+
+  @include sm-lt {
+    --header-height: auto;
+    padding: 2rem;
+  }
+
+  .logo {
+    padding: 0.5rem;
+
+    &__J {
+      --logo-size: 5rem;
+      z-index: 10;
+      @include logo(var(--logo-size));
+
+      @include sm-lt {
+        --logo-size: 3rem;
+      }
+    }
   }
 
   nav.menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @include sm-lt {
+      display: none;
+    }
 
     ul {
       display: flex;
@@ -36,11 +59,80 @@
       li {
         padding: 1rem;
 
+        @include md {
+          padding: 0.3rem;
+        }
+
         a {
           padding: 1rem;
           font-size: 1.6rem;
           font-weight: 300;
           letter-spacing: 1px;
+
+          @include md {
+            padding: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  .aside-menu-button {
+    display: none;
+    z-index: 9;
+
+    @include sm-lt {
+      display: flex;
+    }
+  }
+
+  .aside-menu {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    background-color: transparent;
+    transform: translateX(0vw);
+    transition: 0.3s transform;
+
+    &.hidden {
+      transform: translateX(100vw);
+    }
+
+    nav.menu {
+      min-width: 80%;
+      max-width: calc(100% - 6rem);
+      height: 100%;
+      margin-left: 6rem;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--color-dark-grey);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+
+        li {
+          padding: 2rem;
+
+          a {
+            padding: 1rem;
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+          }
         }
       }
     }

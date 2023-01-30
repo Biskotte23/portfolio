@@ -1,0 +1,23 @@
+.footer {
+  padding: 3rem;
+
+  .social-networks {
+    display: none;
+    margin-bottom: 2rem;
+
+    @include sm-lt {
+      display: flex;
+    }
+  }
+
+  &__sentence {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+
+    .copyright {
+      color: var(--color-primary);
+      margin-left: 0.5rem;
+    }
+  }
+}

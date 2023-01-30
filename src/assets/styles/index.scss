@@ -6,11 +6,12 @@
 @import "./base/base", "./base/helpers";
 
 // Components.
-@import "./components/logo", "./components/links", "./components/buttons";
+@import "./components/logo", "./components/links", "./components/buttons",
+  "./components/menu-button", "./components/social-networks";
 
 // Layout-related sections.
-@import "./layouts/debug", "./layouts/header", "./layouts/side-bar",
-  "layouts/banner", "./layouts/about";
+@import "./layouts/debug", "./layouts/page", "./layouts/header",
+  "./layouts/side-bar", "layouts/banner", "./layouts/about", "./layouts/footer";
 
 // Page-specific styles.
 @import "./pages/portfolio";

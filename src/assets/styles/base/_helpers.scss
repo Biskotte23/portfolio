@@ -19,3 +19,11 @@
 .monospace {
   font-family: var(--font-monospace);
 }
+
+.blur {
+  filter: blur(4px);
+}
+
+.fixed {
+  overflow: hidden;
+}
