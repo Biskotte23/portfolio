@@ -8,23 +8,23 @@ function Logo() {
   );
 }
 
-function Nav() {
+function Nav({ handleAnchorLinkClick }) {
   const links = [
     {
       title: "À Propos",
-      href: "/",
+      href: "about",
     },
     {
       title: "Expérience",
-      href: "/",
+      href: "experience",
     },
     {
       title: "Projets",
-      href: "/",
+      href: "projects",
     },
     {
       title: "Contact",
-      href: "/",
+      href: "contact",
     },
   ];
 
@@ -38,7 +38,11 @@ function Nav() {
         {links.map((link) => {
           return (
             <li key={link.title}>
-              <a className="link--highlighted" href={link.href}>
+              <a
+                className="link--highlighted"
+                href={`#${link.href}`}
+                onClick={() => handleAnchorLinkClick(link.href)}
+              >
                 {link.title}
               </a>
             </li>
@@ -67,19 +71,24 @@ function MenuButton({ onClick, isActive }) {
   );
 }
 
-function AsideMenu({ displayed, onClick }) {
+function AsideMenu({ displayed, handleAnchorLinkClick, hideAsideMenu }) {
+  function handleAnchorLinkAndHideMenuClick(anchor) {
+    hideAsideMenu();
+    handleAnchorLinkClick(anchor);
+  }
+
   return (
     <aside
       className={`aside-menu ${displayed ? "" : "hidden"}`}
-      onClick={onClick}
-      onTouchStart={onClick}
+      onClick={hideAsideMenu}
+      onTouchStart={hideAsideMenu}
     >
-      <Nav />
+      <Nav handleAnchorLinkClick={handleAnchorLinkAndHideMenuClick} />
     </aside>
   );
 }
 
-export default function Header() {
+export default function Header({ handleAnchorLinkClick }) {
   const [isAsideMenuDisplayed, setAsideMenuDisplay] = useState(false);
   let body = document.querySelector("body");
   let pageContent = document.querySelector(".page__content");
@@ -105,8 +114,12 @@ export default function Header() {
   return (
     <header className="header">
       <Logo />
-      <Nav />
-      <AsideMenu displayed={isAsideMenuDisplayed} onClick={hideAsideMenu} />
+      <Nav handleAnchorLinkClick={handleAnchorLinkClick} />
+      <AsideMenu
+        displayed={isAsideMenuDisplayed}
+        handleAnchorLinkClick={handleAnchorLinkClick}
+        hideAsideMenu={hideAsideMenu}
+      />
       <MenuButton
         onClick={toggleAsideMenuDisplay}
         isActive={isAsideMenuDisplayed}

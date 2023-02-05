@@ -1,4 +1,4 @@
-export default function Banner() {
+export default function Banner({ handleAnchorLinkClick }) {
   return (
     <div className="banner">
       <div className="banner__sandwich"></div>
@@ -12,7 +12,11 @@ export default function Banner() {
         <span className="color-secondary">informatique</span>.
       </p>
       <div className="banner__sandwich">
-        <a className="banner__button button" href="/">
+        <a
+          className="banner__button button"
+          href="#about"
+          onClick={() => handleAnchorLinkClick("about")}
+        >
           En savoir plus
         </a>
       </div>

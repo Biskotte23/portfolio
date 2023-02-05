@@ -1,3 +1,55 @@
 .portfolio {
   position: relative;
+
+  section {
+    h2 {
+      width: 100%;
+      font-size: 2.8rem;
+      font-weight: 500;
+      font-family: var(--font-monospace);
+      margin-bottom: 4rem;
+      text-align: left;
+
+      @include sm-lt {
+        font-size: 2rem;
+      }
+
+      &::before {
+        content: "<h2> ";
+        color: var(--color-secondary);
+      }
+
+      &::after {
+        content: " </h2>";
+        color: var(--color-secondary);
+      }
+    }
+
+    h3 {
+      width: 100%;
+      font-size: 2.4rem;
+      font-weight: 400;
+      font-family: var(--font-monospace);
+      margin-bottom: 3rem;
+      text-align: left;
+
+      @include sm-lt {
+        font-size: 1.8rem;
+      }
+
+      i {
+        color: var(--color-secondary);
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: var(--font-open-sans);
+      letter-spacing: 0.5px;
+      line-height: 2.4rem;
+      margin-bottom: 2rem;
+    }
+  }
 }

@@ -20,6 +20,11 @@
   font-family: var(--font-monospace);
 }
 
+.bold {
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
 .blur {
   filter: blur(4px);
 }
