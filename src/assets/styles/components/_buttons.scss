@@ -1,18 +1,46 @@
 .button {
+  position: relative;
   display: block;
   padding: 1.5rem 2.5rem;
   color: var(--color-primary-transparent);
   font-family: var(--font-monospace);
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
   border: 1px solid var(--color-primary-transparent);
-  transition: color 0.3s, background-color 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+
+  animation: all 0.2s;
+  filter: contrast(10);
+  overflow: hidden;
 
   &:hover {
     color: var(--color-background);
-    background-color: var(--color-primary-transparent);
-    transition: color 0.3s, background-color 0.5s;
+    text-shadow: 1px 1px 5px (--color-background);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      19deg,
+      var(--color-primary-transparent) 50%,
+      transparent 50%,
+      transparent 100%
+    );
+    transform-origin: 100% 100%;
+    transition: transform 0.5s ease-in-out;
+    transform: translate(-100%, 0) scale3d(2, 2, 1);
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: translate(100%, 0) scale3d(2, 2, 1);
   }
 }

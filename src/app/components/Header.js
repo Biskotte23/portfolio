@@ -1,4 +1,5 @@
 import { useState } from "react";
+import cv from "../../../src/assets/pdfs/CV.pdf";
 
 function Logo() {
   return (
@@ -49,7 +50,7 @@ function Nav({ handleAnchorLinkClick }) {
           );
         })}
       </ul>
-      <a className="button" href="/">
+      <a className="button" href={cv} target="_blank" rel="noreferrer">
         Curiculum Vitae
       </a>
     </nav>

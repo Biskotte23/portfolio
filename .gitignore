@@ -28,6 +28,7 @@ public/assets/icons/*.png
 public/assets/images
 src/assets/images
 src/assets/fonts
+src/assets/pdfs
 
 # Git hooks
 .husky
