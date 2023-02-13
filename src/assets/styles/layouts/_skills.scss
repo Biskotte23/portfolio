@@ -1,0 +1,115 @@
+.skills {
+  min-height: 100vh;
+
+  .section__container {
+    max-width: 800px;
+  }
+
+  .skills-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .skills-block {
+      margin-right: auto;
+      margin-bottom: 4rem;
+
+      &:nth-child(even) {
+        margin-right: 0;
+        margin-left: auto;
+
+        @include sm-lt {
+          margin-left: 0;
+          margin-right: auto;
+        }
+
+        .skills-block__title {
+          &::first-letter {
+            color: var(--color-secondary);
+          }
+        }
+      }
+
+      &__title {
+        margin-bottom: 1rem;
+        display: block;
+        color: var(--color-text);
+        font-family: var(--font-qebab);
+        font-size: 7rem;
+        text-transform: uppercase;
+        font-style: italic;
+        letter-spacing: 1.5rem;
+        line-height: 7rem;
+        opacity: 0.8;
+
+        &::first-letter {
+          color: var(--color-primary);
+        }
+
+        @include sm {
+          font-size: 5rem;
+          letter-spacing: 1.2rem;
+        }
+
+        @include xs {
+          font-size: 3.5rem;
+          letter-spacing: 0.5rem;
+          line-height: 5rem;
+        }
+      }
+
+      &__raw {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-right: 1.5rem;
+
+        @include sm-lt {
+          justify-content: flex-start;
+        }
+
+        .skill-card {
+          margin-left: 3rem;
+          margin-bottom: 1.5rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          @include sm-lt {
+            margin-left: 0;
+            margin-right: 1.5rem;
+          }
+
+          &__logo {
+            --logo-size: 2.2rem;
+            flex: 1;
+            max-width: var(--logo-size);
+            max-height: var(--logo-size);
+            margin-right: 0.6rem;
+
+            @include sm-lt {
+              max-width: 2rem;
+            }
+          }
+
+          &__title {
+            margin-bottom: 0;
+            font-family: var(--font-monospace);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+            letter-spacing: 0.8px;
+            white-space: nowrap;
+
+            @include sm-lt {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

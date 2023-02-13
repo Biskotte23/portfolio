@@ -8,6 +8,7 @@ import Portfolio from "./pages/portfolio/Portfolio";
 export default function App() {
   const refs = {
     about: useRef(),
+    skills: useRef(),
   };
 
   function handleAnchorLinkClick(anchor) {

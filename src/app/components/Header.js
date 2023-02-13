@@ -16,8 +16,8 @@ function Nav({ handleAnchorLinkClick }) {
       href: "about",
     },
     {
-      title: "Expérience",
-      href: "experience",
+      title: "Skills",
+      href: "skills",
     },
     {
       title: "Projets",

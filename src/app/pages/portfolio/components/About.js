@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import { languages, frontend, backend, tools } from "../../../../data/skills";
 
 function Presentation() {
   return (
@@ -56,73 +55,14 @@ function Picture() {
   );
 }
 
-function Skills() {
-  const skillCategories = {
-    languages: {
-      title: "Langages",
-      skills: languages,
-    },
-    frontend: {
-      title: "Front-end",
-      skills: frontend,
-    },
-    backend: {
-      title: "Back-end",
-      skills: backend,
-    },
-    tools: {
-      title: "Outils",
-      skills: tools,
-    },
-  };
-
-  return (
-    <div className="skills-container">
-      {Object.keys(skillCategories).map((categoryName) => {
-        const category = skillCategories[categoryName];
-
-        return (
-          <div className="skills-column" key={categoryName}>
-            <h4 className="skills-column__title">{category.title}</h4>
-            <div className="skills-column__content">
-              {category.skills.map((skill) => (
-                <SkillCard skill={skill} key={skill.title} />
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-function SkillCard({ skill }) {
-  return (
-    <div className="skill-card">
-      <img
-        src={skill.icon}
-        alt={`Logo ${skill.title}`}
-        className="skill-card__logo"
-      />
-      <p className="skill-card__title">{skill.title}</p>
-    </div>
-  );
-}
-
 export const About = forwardRef(({ handleAnchorLinkClick }, ref) => {
   return (
-    <section className="about" ref={ref}>
-      <div className="about__container">
+    <section className="section about" ref={ref}>
+      <div className="section__container">
         <h2>Qui suis-je ?</h2>
         <div className="about-content">
           <Presentation />
           <Picture />
-        </div>
-        <div className="skills">
-          <h3>
-            Mes compétences <i className="fa-solid fa-angle-down"></i>
-          </h3>
-          <Skills />
         </div>
       </div>
     </section>
