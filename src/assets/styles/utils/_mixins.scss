@@ -13,6 +13,13 @@
   }
 }
 
+/// Media query for mobile devices with landscape orientation.
+@mixin mobile-landscape {
+  @media (orientation: landscape) and (height < 500px) {
+    @content;
+  }
+}
+
 /// Media query for XS devices.
 @mixin xs {
   @media (max-width: map-get($breakpoints, "xs-max")) {

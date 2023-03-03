@@ -1,43 +1,34 @@
 import { forwardRef } from "react";
-import { languages, frontend, backend, tools } from "../../../../data/skills";
 
-function SkillCard({ skill }) {
-  return (
-    <div className="skill-card">
-      <img
-        src={skill.icon}
-        alt={`Logo ${skill.title}`}
-        className="skill-card__logo"
-      />
-      <p className="skill-card__title">{skill.title}</p>
-    </div>
-  );
-}
-
-export const Skills = forwardRef(({}, ref) => {
+export const Skills = forwardRef((posts, ref) => {
   const skillCategories = {
-    languages: {
-      title: "Langages",
-      skills: languages,
-    },
     frontend: {
       title: "Frontend",
-      skills: frontend,
+      icon: "frontend.svg",
+      skills: [
+        "HTML",
+        "CSS & Sass",
+        "Javascript & Typescript",
+        "React",
+        "Dart & Flutter",
+      ],
     },
     backend: {
       title: "Backend",
-      skills: backend,
+      icon: "backend.svg",
+      skills: ["PHP", "Symfony", "MySQL", "Firebase"],
     },
     tools: {
       title: "Outils",
-      skills: tools,
+      icon: "tools.svg",
+      skills: ["Visual Studio Code", "Git & Github", "Notion"],
     },
   };
 
   return (
     <section className="section skills" ref={ref}>
       <div className="section__container">
-        <h2>Mes skills</h2>
+        <h2 className="xs-no-mb">Mes skills</h2>
 
         <div className="skills-content">
           {Object.keys(skillCategories).map((categoryName) => {
@@ -45,15 +36,17 @@ export const Skills = forwardRef(({}, ref) => {
 
             return (
               <div className="skills-block" key={categoryName}>
+                <img
+                  className="skills-block__icon"
+                  src={`/assets/images/skills-icons/${category.icon}`}
+                  alt={`Icône ${category.title}`}
+                />
                 <h3 className="skills-block__title">{category.title}</h3>
-                <div className="skills-block__raw">
-                  {category.skills
-                    .filter((skill) => skill.show === true)
-                    .sort((a, b) => a.title.localeCompare(b.title))
-                    .map((skill) => (
-                      <SkillCard skill={skill} key={skill.title} />
-                    ))}
-                </div>
+                <ul className="skills-block__list">
+                  {category.skills.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
               </div>
             );
           })}

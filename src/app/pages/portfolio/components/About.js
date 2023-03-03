@@ -4,8 +4,8 @@ function Presentation() {
   return (
     <div className="about-content__presentation">
       <p>
-        Bonjour, je m’appelle Jules, j’ai 21 ans, et je suis actuellement en 4e
-        année d’école d’ingénieur en informatique à{" "}
+        Salut, moi c'est Jules, j’ai 22 ans, et je suis actuellement en 4e année
+        d’école d’ingénieur en informatique à{" "}
         <a
           className="link"
           href="https://polytech.univ-tours.fr/"

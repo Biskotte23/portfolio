@@ -27,6 +27,11 @@
     padding: 2rem;
   }
 
+  @include mobile-landscape {
+    --header-height: auto;
+    padding: 0.8rem 2rem;
+  }
+
   .logo {
     padding: 0.5rem;
 
@@ -38,6 +43,10 @@
       @include sm-lt {
         --logo-size: 3rem;
       }
+
+      @include mobile-landscape {
+        --logo-size: 3rem;
+      }
     }
   }
 
@@ -47,6 +56,10 @@
     align-items: center;
 
     @include sm-lt {
+      display: none;
+    }
+
+    @include mobile-landscape {
       display: none;
     }
 
@@ -82,6 +95,10 @@
     z-index: 9;
 
     @include sm-lt {
+      display: flex;
+    }
+
+    @include mobile-landscape {
       display: flex;
     }
   }
@@ -124,8 +141,16 @@
         align-items: center;
         margin-bottom: 4rem;
 
+        @include mobile-landscape {
+          margin-bottom: 1rem;
+        }
+
         li {
           padding: 2rem;
+
+          @include mobile-landscape {
+            padding: 1rem;
+          }
 
           a {
             padding: 1rem;
