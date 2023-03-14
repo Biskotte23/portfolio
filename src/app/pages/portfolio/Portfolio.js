@@ -1,6 +1,7 @@
 import Banner from "./components/Banner";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
+import { Projects } from "./components/Projects";
 
 export default function Portfolio({ handleAnchorLinkClick, refs }) {
   return (
@@ -8,6 +9,7 @@ export default function Portfolio({ handleAnchorLinkClick, refs }) {
       <Banner handleAnchorLinkClick={handleAnchorLinkClick} />
       <About ref={refs.about} handleAnchorLinkClick={handleAnchorLinkClick} />
       <Skills ref={refs.skills} />
+      <Projects ref={refs.projects} />
     </div>
   );
 }

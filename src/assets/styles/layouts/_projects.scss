@@ -1,0 +1,222 @@
+.projects {
+    .projects-content {
+        .primary-projects {
+            .project-card {
+                --cover-width: 45rem;
+                margin-bottom: 6rem;
+                display: grid;
+                grid-template-areas:
+                    "cover type"
+                    "cover title"
+                    "cover resume"
+                    "cover technos";
+                grid-template-columns: var(--cover-width) auto;
+                column-gap: 4rem;
+                place-items: center stretch;
+                text-align: end;
+
+                @include lg {
+                    --cover-width: 35rem;
+                }
+
+                @include md-lt {
+                    grid-template-areas:
+                        "type type"
+                        "title title"
+                        "resume resume"
+                        "cover cover"
+                        "technos technos";
+                    grid-template-columns: 1fr;
+                    text-align: start;
+
+                    .project-card__cover {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                &:nth-child(even) {
+                    grid-template-areas:
+                        "type cover"
+                        "title cover"
+                        "resume cover"
+                        "technos cover";
+                    grid-template-columns: auto var(--cover-width);
+                    text-align: start;
+
+                    @include md-lt {
+                        grid-template-areas:
+                            "type type"
+                            "title title"
+                            "resume resume"
+                            "cover cover"
+                            "technos technos";
+                        grid-template-columns: 1fr;
+
+                        .project-card__cover {
+                            margin-bottom: 1.5rem;
+                        }
+                    }
+
+                    .project-card {
+                        &__technos {
+                            justify-content: flex-start;
+
+                            li {
+                                margin-left: 0;
+                                margin-right: 2rem;
+                            }
+                        }
+                    }
+                }
+
+                &__cover {
+                    display: block;
+                    grid-area: cover;
+
+                    .double-border-image {
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                &__type {
+                    grid-area: type;
+                    color: var(--color-primary);
+                    font-size: 1.6rem;
+                    font-family: var(--font-monospace);
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    text-transform: capitalize;
+                    opacity: 0.9;
+                    margin-bottom: 0.5rem;
+                }
+
+                &__title {
+                    grid-area: title;
+                    margin-bottom: 2rem;
+                    line-height: 3rem;
+                    text-align: inherit;
+
+                    a {
+                        font-size: 3rem;
+                        font-family: var(--font-open-sans);
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                    }
+                }
+
+                &__resume {
+                    grid-area: resume;
+                    font-size: 1.4rem;
+                    letter-spacing: 0.5px;
+                    line-height: 2.2rem;
+                }
+
+                &__technos {
+                    grid-area: technos;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-end;
+
+                    @include md-lt {
+                        justify-content: flex-start;
+                    }
+
+                    li {
+                        margin-left: 2rem;
+                        color: var(--color-secondary);
+                        font-family: var(--font-monospace);
+                        font-size: 1.5rem;
+                        font-weight: 100;
+                        letter-spacing: 1px;
+                        line-height: 2.2rem;
+
+                        @include md-lt {
+                            margin-left: 0;
+                            margin-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 10rem;
+    }
+
+    .secondary-projects {
+        --columns: 3;
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        gap: 2rem;
+
+        @include md-lt {
+            --columns: 2;
+        }
+
+        @include xs {
+            --columns: 1;
+        }
+
+        .project-card--secondary {
+            display: block;
+            padding: 3rem;
+            color: var(--color-text);
+            background-color: #1d1d1d;
+            border-radius: 1px;
+            transition: 0.4s;
+
+            &:hover {
+                background-color: var(--color-background);
+                transition: 0.5s;
+
+                .project-card--secondary__title {
+                    color: var(--color-primary);
+                    transition: 0.5s;
+                }
+            }
+
+            &__header {
+                display: flex;
+                flex-flow: row nowrap;
+                margin-bottom: 2rem;
+
+                i {
+                    font-size: 3rem;
+                    color: var(--color-primary);
+                }
+            }
+
+            &__title {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+                transition: color 0.4s;
+            }
+
+            &__resume {
+                font-size: 1.4rem;
+                font-weight: 300;
+                line-height: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            &__technos {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+
+                li {
+                    margin-right: 1.2rem;
+                    color: var(--color-secondary);
+                    font-family: var(--font-monospace);
+                    font-size: 1.3rem;
+                    font-weight: 100;
+                    letter-spacing: 0.5px;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+}

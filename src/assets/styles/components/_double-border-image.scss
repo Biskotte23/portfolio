@@ -1,0 +1,102 @@
+.double-border-image {
+    --border-padding: 6px;
+    width: 100%;
+    position: relative;
+    padding: var(--border-padding);
+    transition: 1s;
+
+    &:hover {
+        img {
+            box-shadow: rgba(0, 0, 0, 0.6) 0px 14px 10px -10px,
+                rgba(0, 0, 0, 0.4) 0px 10px 10px;
+            filter: grayscale(100%);
+            transition: 1s;
+        }
+    }
+
+    img {
+        border-radius: 1px;
+        transition: 1s;
+    }
+
+    .border {
+        position: absolute;
+        opacity: 0.5;
+
+        &:before,
+        &:after,
+        & .border__child:before,
+        & .border__child:after {
+            position: absolute;
+            background-color: var(--color-primary);
+            content: "";
+            transition: all 0.4s ease-in-out;
+        }
+
+        &:before,
+        &:after {
+            width: 100%;
+            height: 1px;
+        }
+
+        .border__child {
+            &:before,
+            &:after {
+                width: 1px;
+                height: 100%;
+            }
+        }
+
+        &.one {
+            left: 0;
+            top: 0;
+            right: calc(var(--border-padding) * 2);
+            bottom: calc(var(--border-padding) * 2);
+
+            &:before,
+            & .border__child:before {
+                left: 0;
+                top: 0;
+            }
+
+            &:after,
+            & .border__child:after {
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        &.two {
+            left: calc(var(--border-padding) * 2);
+            top: calc(var(--border-padding) * 2);
+            right: 0;
+            bottom: 0;
+
+            &:before,
+            & .border__child:before {
+                right: 0;
+                top: 0;
+            }
+
+            &:after,
+            & .border__child:after {
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &:hover {
+        .border {
+            &:before,
+            &:after {
+                width: 0;
+            }
+
+            & .border__child:before,
+            & .border__child:after {
+                height: 0;
+            }
+        }
+    }
+}
