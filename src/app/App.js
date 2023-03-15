@@ -10,6 +10,7 @@ export default function App() {
     about: useRef(),
     skills: useRef(),
     projects: useRef(),
+    contact: useRef(),
   };
 
   function handleAnchorLinkClick(anchor) {

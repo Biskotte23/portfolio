@@ -8,6 +8,7 @@
 
 :root {
   --color-white: #ddd;
+  --color-grey: #1d1d1d;
   --color-dark-grey: #0c0c0c;
   --color-background: #141414;
   --color-text: #ced6e0;
@@ -19,6 +20,9 @@
   --font-open-sans: "Open Sans", sans-serif;
   --font-monospace: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono",
     monospace;
+
+  --box-shadow: rgba(0, 0, 0, 0.6) 0px 14px 10px -10px,
+    rgba(0, 0, 0, 0.4) 0px 10px 10px;
 }
 
 // --------------------
