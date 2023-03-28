@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import DoubleBorderImage from "../../../../components/DoubleBorderImage";
 import { projects } from "../../../../data/projects";
 
@@ -39,12 +39,27 @@ function getMainProjects() {
     );
 }
 
-function getOtherProjects() {
+function OtherProjects() {
+    const minProjectsNumber = 6;
+    const [showAllProjects, setShowAllProjects] = useState(false);
+
+    function handleClick() {
+        setShowAllProjects(!showAllProjects);
+    }
+
+    let secondaryProjects = projects.filter(
+        (project) => project.status === "secondary"
+    );
+    let projectsNumber = secondaryProjects.length;
+
+    if (minProjectsNumber < secondaryProjects.length && !showAllProjects) {
+        projectsNumber = minProjectsNumber;
+    }
+
     return (
-        <div className="secondary-projects">
-            {projects
-                .filter((project) => project.status === "secondary")
-                .map((project) => {
+        <>
+            <div className="secondary-projects">
+                {secondaryProjects.slice(0, projectsNumber).map((project) => {
                     return (
                         <a
                             className="project-card--secondary"
@@ -68,7 +83,16 @@ function getOtherProjects() {
                         </a>
                     );
                 })}
-        </div>
+            </div>
+            {minProjectsNumber < secondaryProjects.length ? (
+                <button
+                    className="projects-content__button button"
+                    onClick={handleClick}
+                >
+                    {showAllProjects ? "Voir moins" : "Voir plus"}
+                </button>
+            ) : null}
+        </>
     );
 }
 
@@ -81,7 +105,7 @@ export const Projects = forwardRef((posts, ref) => {
                 <div className="projects-content">
                     {getMainProjects()}
                     <h3>Autres projets notoires</h3>
-                    {getOtherProjects()}
+                    <OtherProjects />
                 </div>
             </div>
         </section>
