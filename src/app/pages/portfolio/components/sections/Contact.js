@@ -1,11 +1,18 @@
 import { forwardRef } from "react";
+import { myself } from "../../../../../data/myself.js";
 
-export const Contact = forwardRef((posts, ref) => {
+/**
+ * Contact section.
+ *
+ * @param {*} props Properties of the element.
+ * @param {object} ref Element reference.
+ * @return {JSX.Element} Contact section.
+ */
+export const Contact = forwardRef((props, ref) => {
     return (
         <section className="section contact" ref={ref}>
             <div className="section__container">
                 <h2 className="xs-no-mb">Contactez-moi</h2>
-
                 <div className="contact-content">
                     <div className="contact-content__info">
                         <div className="message">
@@ -25,25 +32,25 @@ export const Contact = forwardRef((posts, ref) => {
                                 <i className="fa-solid fa-location-dot"></i>
                                 Localisation actuelle
                             </h3>
-                            <a
-                                className="location__city link--highlighted"
-                                href="/"
-                            >
-                                Tours 37200
-                            </a>
-                            <hr />
-                            <a
-                                className="location__city link--highlighted"
-                                href="/"
-                            >
-                                Beaune 21200
-                            </a>
+                            {myself.addresses.map((address) => {
+                                return (
+                                    <a
+                                        key={address.url}
+                                        className="location__city link--highlighted"
+                                        href={address.url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {address.city} {address.postalCode}
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
 
                     <a
                         className="contact-content__button button"
-                        href="mailto:jules.pascot@gmail.com"
+                        href={`mailto:${myself.mail}`}
                     >
                         Me contacter
                     </a>

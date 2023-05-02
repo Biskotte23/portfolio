@@ -1,3 +1,10 @@
+/**
+ * Image component with double border.
+ *
+ * @param {string} src Image source URL.
+ * @param {string} alt Alternative image description.
+ * @returns {JSX.Element} Image component with double border.
+ */
 export default function DoubleBorderImage({ src, alt }) {
     return (
         <div className="double-border-image">

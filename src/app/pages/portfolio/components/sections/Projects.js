@@ -1,7 +1,12 @@
 import { forwardRef, useState } from "react";
 import DoubleBorderImage from "../../../../components/DoubleBorderImage";
-import { projects } from "../../../../data/projects";
+import { projects } from "../../../../../data/projects";
 
+/**
+ * Main projects list.
+ *
+ * @returns {JSX.Element} Main projects list.
+ */
 function getMainProjects() {
     return (
         <div className="primary-projects">
@@ -39,6 +44,11 @@ function getMainProjects() {
     );
 }
 
+/**
+ * Other projects grid.
+ *
+ * @returns {JSX.Element} Other projects grid.
+ */
 function OtherProjects() {
     const minProjectsNumber = 6;
     const [showAllProjects, setShowAllProjects] = useState(false);
@@ -96,7 +106,14 @@ function OtherProjects() {
     );
 }
 
-export const Projects = forwardRef((posts, ref) => {
+/**
+ * Project section.
+ *
+ * @param {*} props Element properties.
+ * @param {object} ref Element reference.
+ * @return {JSX.Element} Project section.
+ */
+export const Projects = forwardRef((props, ref) => {
     return (
         <section className="section projects" ref={ref}>
             <div className="section__container">
