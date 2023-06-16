@@ -71,7 +71,7 @@ function Picture() {
  */
 export const About = forwardRef(({ handleAnchorLinkClick }, ref) => {
   return (
-    <section className="section about" ref={ref}>
+    <section id="about-section" className="section about" ref={ref}>
       <div className="section__container">
         <h2>Qui suis-je ?</h2>
         <div className="about-content">

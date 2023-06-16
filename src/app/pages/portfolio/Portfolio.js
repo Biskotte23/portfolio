@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import Banner from "./components/sections/Banner";
 import Header from "./components/Header";
@@ -35,14 +35,25 @@ function Content({ handleAnchorLinkClick, refs }) {
  * @returns {JSX.Element} Home page of the portfolio.
  */
 export default function Portfolio() {
-  const refs = {
-    about: useRef(null),
-    skills: useRef(null),
-    projects: useRef(null),
-    contact: useRef(null),
-  };
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+  const [activeSectionID, setActiveSectionID] = useState("");
 
-  // Handle click on anchor link.
+  const getRefs = useCallback(
+    () => ({
+      about: aboutRef,
+      skills: skillsRef,
+      projects: projectsRef,
+      contact: contactRef,
+    }),
+    [aboutRef, skillsRef, projectsRef, contactRef]
+  );
+
+  const refs = getRefs();
+
+  // Handles click on anchor link.
   function handleAnchorLinkClick(anchor) {
     if (refs[anchor]) {
       refs[anchor].current.scrollIntoView({
@@ -52,9 +63,37 @@ export default function Portfolio() {
     }
   }
 
+  useEffect(() => {
+    // Manages scrolling by detecting the displayed section.
+    const handleScroll = () => {
+      let currentSection = "";
+
+      Object.keys(refs).forEach((key) => {
+        const section = refs[key].current;
+        const rect = section.getBoundingClientRect();
+
+        if (
+          rect.top <= window.innerHeight * 0.5 &&
+          rect.bottom >= window.innerHeight * 0.5
+        ) {
+          // Modifier par key ?
+          currentSection = section.id;
+        }
+      });
+
+      setActiveSectionID(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [refs]);
+
   return (
     <div className="page">
-      <Header handleAnchorLinkClick={handleAnchorLinkClick} />
+      <Header
+        handleAnchorLinkClick={handleAnchorLinkClick}
+        activeSectionID={activeSectionID}
+      />
       <div className="page__content">
         <Content refs={refs} handleAnchorLinkClick={handleAnchorLinkClick} />
       </div>

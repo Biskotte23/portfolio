@@ -18,25 +18,30 @@ function Logo() {
  * Header navigation bar.
  *
  * @param {function} handleAnchorLinkClick Function for managing clicks on anchor links.
+ * @param {string} activeSectionID Visible section ID.
  * @returns {JSX.Element} Header navigation bar.
  */
-function Nav({ handleAnchorLinkClick }) {
+function Nav({ handleAnchorLinkClick, activeSectionID }) {
     const links = [
         {
             title: "À Propos",
             href: "about",
+            id: "about-section",
         },
         {
             title: "Skills",
             href: "skills",
+            id: "skills-section",
         },
         {
             title: "Projets",
             href: "projects",
+            id: "projects-section",
         },
         {
             title: "Contact",
             href: "contact",
+            id: "contact-section",
         },
     ];
 
@@ -51,7 +56,9 @@ function Nav({ handleAnchorLinkClick }) {
                     return (
                         <li key={link.title}>
                             <a
-                                className="link--highlighted"
+                                className={`link--highlighted ${
+                                    activeSectionID === link.id ? "active" : ""
+                                }`}
                                 href={`#${link.href}`}
                                 onClick={() => handleAnchorLinkClick(link.href)}
                             >
@@ -118,10 +125,11 @@ function AsideMenu({ displayed, handleAnchorLinkClick, hideAsideMenu }) {
 /**
  * Header of the portfolio.
  *
- * @param {function} handleAnchorLinkClick Function for managing clicks on anchor links..
+ * @param {function} handleAnchorLinkClick Function for managing clicks on anchor links.
+ * @param {string} activeSectionID Visible section ID.
  * @returns {JSX.Element} Header of the portfolio.
  */
-export default function Header({ handleAnchorLinkClick }) {
+export default function Header({ handleAnchorLinkClick, activeSectionID }) {
     const [isAsideMenuDisplayed, setAsideMenuDisplay] = useState(false);
     let body = document.querySelector("body");
     let pageContent = document.querySelector(".page__content");
@@ -149,7 +157,10 @@ export default function Header({ handleAnchorLinkClick }) {
     return (
         <header className="header">
             <Logo />
-            <Nav handleAnchorLinkClick={handleAnchorLinkClick} />
+            <Nav
+                handleAnchorLinkClick={handleAnchorLinkClick}
+                activeSectionID={activeSectionID}
+            />
             <AsideMenu
                 displayed={isAsideMenuDisplayed}
                 handleAnchorLinkClick={handleAnchorLinkClick}

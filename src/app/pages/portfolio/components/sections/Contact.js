@@ -10,7 +10,7 @@ import { myself } from "../../../../../data/myself.js";
  */
 export const Contact = forwardRef((props, ref) => {
     return (
-        <section className="section contact" ref={ref}>
+        <section id="contact-section" className="section contact" ref={ref}>
             <div className="section__container">
                 <h2 className="xs-no-mb">Contactez-moi</h2>
                 <div className="contact-content">

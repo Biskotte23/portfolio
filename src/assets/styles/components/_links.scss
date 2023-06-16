@@ -1,37 +1,37 @@
 .link {
-  color: var(--color-primary);
-  font-weight: 300;
-  border-bottom: 1px solid transparent;
-  transition: ease-in-out 0.3s;
-
-  &:hover {
-    border-bottom-color: var(--color-primary);
-    transition: ease-in-out 0.4s;
-  }
-
-  &--highlighted {
-    color: var(--color-text);
-    border: none;
-    cursor: pointer;
-    transition: 0.6s;
-
-    &:hover {
-      color: var(--color-primary);
-      transition: 0.5s;
-      text-shadow: 0 0 var(--color-primary);
-    }
-  }
-
-  &--underline {
     color: var(--color-primary);
-    text-decoration: none;
+    font-weight: 300;
     border-bottom: 1px solid transparent;
-    cursor: pointer;
-    transition: border-bottom-color 0.3s;
+    transition: ease-in-out 0.3s;
 
     &:hover {
-      border-bottom-color: var(--color-primary);
-      transition: border-bottom-color 0.4s;
+        border-bottom-color: var(--color-primary);
+        transition: ease-in-out 0.4s;
     }
-  }
+
+    &--highlighted {
+        color: var(--color-text);
+        border: none;
+        cursor: pointer;
+        transition: 0.6s;
+
+        &:hover {
+            color: var(--color-primary);
+            transition: 0.5s;
+            text-shadow: 0 0 var(--color-primary);
+        }
+    }
+
+    &--underline {
+        color: var(--color-primary);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        cursor: pointer;
+        transition: border-bottom-color 0.3s;
+
+        &:hover {
+            border-bottom-color: var(--color-primary);
+            transition: border-bottom-color 0.4s;
+        }
+    }
 }

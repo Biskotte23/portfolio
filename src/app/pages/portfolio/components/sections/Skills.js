@@ -28,7 +28,7 @@ export const Skills = forwardRef((props, ref) => {
     };
 
     return (
-        <section className="section skills" ref={ref}>
+        <section id="skills-section" className="section skills" ref={ref}>
             <div className="section__container">
                 <h2 className="xs-no-mb">Mes skills</h2>
 

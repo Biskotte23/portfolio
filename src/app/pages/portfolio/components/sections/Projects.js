@@ -122,7 +122,7 @@ function OtherProjects() {
  */
 export const Projects = forwardRef((props, ref) => {
     return (
-        <section className="section projects" ref={ref}>
+        <section id="projects-section" className="section projects" ref={ref}>
             <div className="section__container">
                 <h2 className="xs-no-mb">Mon travail</h2>
 
