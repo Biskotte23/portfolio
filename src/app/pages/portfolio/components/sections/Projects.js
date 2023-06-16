@@ -15,7 +15,12 @@ function getMainProjects() {
                 .map((project) => {
                     return (
                         <div className="project-card" key={project.title}>
-                            <a className="project-card__cover" href="/">
+                            <a
+                                className="project-card__cover"
+                                href={project.link}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <DoubleBorderImage
                                     src={`/assets/images/projects/${
                                         project.cover ?? "In_progress.jpg"
@@ -74,7 +79,9 @@ function OtherProjects() {
                         <a
                             className="project-card--secondary"
                             key={project.title}
-                            href="/"
+                            href={project.link}
+                            target="_blank"
+                            rel="noreferrer"
                         >
                             <div className="project-card--secondary__header">
                                 <i className="fa-regular fa-folder"></i>

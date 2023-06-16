@@ -17,14 +17,14 @@ export const Contact = forwardRef((props, ref) => {
                     <div className="contact-content__info">
                         <div className="message">
                             <p className="message__sentence">
-                                Bien que je sois actuellement encore en école
-                                d'ingénieur, je reste ouvert à toute
-                                proposition.
+                                Bien que je sois actuellement en cours de
+                                formation en école d'ingénieur, je suis ouvert à
+                                toute proposition qui pourrait se présenter.
                             </p>
                             <p className="message__sentence">
                                 N'hésitez pas à me contacter pour toute question
-                                ou juste pour faire un petit coucou, je me ferai
-                                un plaisir de vous répondre !
+                                ou simplement pour échanger, je serai ravi de
+                                vous répondre !
                             </p>
                         </div>
                         <div className="location">

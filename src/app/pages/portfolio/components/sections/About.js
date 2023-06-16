@@ -12,8 +12,8 @@ function Presentation({ handleAnchorLinkClick }) {
   return (
     <div className="about-content__presentation">
       <p>
-        Salut, moi c'est Jules, j’ai 22 ans, et je suis actuellement en 4e année
-        d’école d’ingénieur en informatique à{" "}
+        Bonjour, je m'appelle Jules et je suis étudiant en 4e année d'école
+        d'ingénieur en informatique à{" "}
         <a
           className="link"
           href="https://polytech.univ-tours.fr/"
@@ -22,14 +22,12 @@ function Presentation({ handleAnchorLinkClick }) {
         >
           Polytech Tours
         </a>
-        . Passionné de développement web et mobile, je travaille essentiellement
-        avec <strong className="bold">React</strong> pour du développement web
-        front-end et <strong className="bold">Flutter</strong> pour du
-        développement mobile.
+        . Je suis passionné par la conception et la réalisation de projets
+        informatiques, et je m'efforce de fournir un travail de qualité pour
+        chacun d'entre eux.
       </p>
       <p>
-        Au cours de mes études, j'ai eu l'opportunité de travailler sur de
-        nombreux{" "}
+        Durant mes études, j'ai eu l'occasion de travailler sur divers{" "}
         <a
           className="link"
           href="#projets"
@@ -37,12 +35,15 @@ function Presentation({ handleAnchorLinkClick }) {
         >
           projets
         </a>
-        , individuels ou collectifs, avec des langages et technologies très
-        variés.
+        , individuellement ou en équipe, en utilisant une large gamme de
+        langages et technologies. Cette expérience m'a permis de développer une
+        grande autonomie, une discipline rigoureuse, et une passion pour
+        l'excellence.
       </p>
       <p>
-        Toute cette expérience m'a permis d'acquérir une bonne autonomie, une
-        certaine discipline, ainsi que l'amour du travail bien fait.
+        Ma spécialisation se concentre sur le développement de solutions web et
+        mobiles. Je vous invite à découvrir certains des projets sur lesquels
+        j'ai travaillé à travers mon portfolio.
       </p>
     </div>
   );
